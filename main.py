@@ -31,12 +31,10 @@ def int_to_roman(num):
                 a= digit % 5
                 string="D" + a*"C" + string
         elif i==4:
-            if digit*1000 in symbol_value:
-                string=symbol_value[digit*1000] + string
-            elif digit in list_1:
                 string=digit*"M" + string
     return string
-print(int_to_roman(1453))
+
+
     
 
             
