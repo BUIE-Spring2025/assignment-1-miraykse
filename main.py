@@ -3,36 +3,40 @@ def int_to_roman(num):
     string=""
     list_1=[2,3]
     list_2=[6,7,8]
-    for i in range(1,5):
-        digit=num%10
-        num=num//10
-        if i==1:
-            if digit in symbol_value:
-                string=string + symbol_value[digit]
-            elif digit in list_1:
-                string=string + digit*"I"
-            elif digit in list_2:
-                a= digit % 5
-                string=string + "V" + a*"I"
-        elif i==2:
-            if digit*10 in symbol_value:
-                string=symbol_value[digit*10] + string
-            elif digit in list_1:
-                string=digit*"X" + string
-            elif digit in list_2:
-                a= digit % 5
-                string="L" + a*"X" + string
-        elif i==3:
-            if digit*100 in symbol_value:
-                string=symbol_value[digit*100] + string
-            elif digit in list_1:
-                string=digit*"C" + string
-            elif digit in list_2:
-                a= digit % 5
-                string="D" + a*"C" + string
-        elif i==4:
-                string=digit*"M" + string
+    if num<1 or num>3999 :
+        print("Invalid input: Please enter a number between 1 and 3999.")
+    else:
+        for i in range(1,5):
+            digit=num%10
+            num=num//10
+            if i==1:
+                if digit in symbol_value:
+                    string=string + symbol_value[digit]
+                elif digit in list_1:
+                    string=string + digit*"I"
+                elif digit in list_2:
+                    a= digit % 5
+                    string=string + "V" + a*"I"
+            elif i==2:
+                if digit*10 in symbol_value:
+                    string=symbol_value[digit*10] + string
+                elif digit in list_1:
+                    string=digit*"X" + string
+                elif digit in list_2:
+                    a= digit % 5
+                    string="L" + a*"X" + string
+            elif i==3:
+                if digit*100 in symbol_value:
+                    string=symbol_value[digit*100] + string
+                elif digit in list_1:
+                    string=digit*"C" + string
+                elif digit in list_2:
+                    a= digit % 5
+                    string="D" + a*"C" + string
+            elif i==4:
+                    string=digit*"M" + string
     return string
+
 
 
     
